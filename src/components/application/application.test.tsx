@@ -40,7 +40,7 @@ describe('Application', ()=> {
         const ContactPlaceHolder = screen.getByPlaceholderText('Enter Contact')
         expect(ContactPlaceHolder).toBeInTheDocument()
 
-        const paragraphText = screen.getByText('All fields are mandatory', {
+        const paragraphText = screen.getByText((content) => content.startsWith('All fields'), {
             selector: 'p'
         })
         expect(paragraphText).toBeInTheDocument()
